@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Solutions | ZNTHEON</title>
+    <link rel="icon" sizes="192x192" type="image/svg+xml" href="img/zntheon_title.svg" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Expert AI consulting services specializing in automation, computer vision, natural language processing, workflow automation, AI automation, and custom software development solutions for businesses.">
+    <meta name="keywords" content="automation, computer vision, natural language processing, workflow automation, AI automation, software development, artificial intelligence, machine learning, business automation, NLP solutions, CV solutions, RPA implementation">
+    <meta name="author" content="ZNTHEON">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI Solutions Consulting - Transform Your Business with AI">
+    <meta property="og:description" content="Specialized AI solutions in automation, computer vision, and natural language processing. Increase revenue and reduce operational costs.">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Solutions Consulting - Automation & AI Services">
+    <meta name="twitter:description" content="Expert consulting in automation, computer vision, natural language processing, and AI-driven software development.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --text-primary: #0a0a0a;
+            --text-secondary: #525252;
+            --border: #e5e5e5;
+            --grid-color: rgba(0, 0, 0, 0.03);
+            --card-shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #171717;
+            --text-primary: #fafafa;
+            --text-secondary: #a3a3a3;
+            --border: #262626;
+            --grid-color: rgba(255, 255, 255, 0.03);
+            --card-shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            position: relative;
+            transition: background 0.3s ease, color 0.3s ease;
+            padding-top: 80px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-secondary);
+            border-bottom: 2px solid var(--border);
+            padding: 1.25rem 0;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px var(--card-shadow);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-logo:hover {
+            color: var(--accent);
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .navbar-menu a {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-menu a:hover {
+            color: var(--text-primary);
+            transform: scale(1.08);
+        }
+
+        .navbar-theme-toggle {
+            background: var(--border);
+            border: none;
+            border-radius: 50px;
+            width: 50px;
+            height: 26px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .navbar-theme-toggle:hover {
+            background: var(--text-secondary);
+        }
+
+        .toggle-circle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            left: 3px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .toggle-circle {
+            left: 27px;
+        }
+
+        /* Grid Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .toggle-icon {
+            font-size: 0.65rem;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+            opacity: 0.9;
+            position: absolute;
+        }
+
+        .toggle-icon.hidden {
+            display: none;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 12px var(--card-shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .scroll-indicator.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-indicator:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px var(--card-shadow);
+        }
+
+        .scroll-progress-fill {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: calc(100% + 6px);
+            height: calc(100% + 6px);
+            transform: rotate(-90deg);
+        }
+
+        .scroll-progress-fill circle {
+            fill: none;
+            stroke: #1e40af;
+            stroke-width: 3;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.1s ease;
+        }
+
+        [data-theme="dark"] .scroll-progress-fill circle {
+            stroke: #3b82f6;
+        }
+
+        .scroll-arrow {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .scroll-arrow path {
+            stroke: #1e40af;
+        }
+
+        [data-theme="dark"] .scroll-arrow path {
+            stroke: #3b82f6;
+        }
+
+        /* Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .chat-button:hover {
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .chat-icon {
+            color: #1e40af;
+            font-size: 2.5rem;
+            filter: drop-shadow(0 2px 8px rgba(30, 64, 175, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .chat-button:hover .chat-icon {
+            filter: drop-shadow(0 4px 12px rgba(30, 64, 175, 0.5));
+        }
+
+        [data-theme="dark"] .chat-icon {
+            color: #3b82f6;
+            filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.3));
+        }
+
+        [data-theme="dark"] .chat-button:hover .chat-icon {
+            filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.5));
+        }
+
+        /* Chat Window */
+        .chat-window {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 380px;
+            height: 500px;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.95);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
+
+        .chat-window.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .chat-header {
+            background: #1e40af;
+            color: white;
+            padding: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        .chat-close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .chat-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: var(--bg-primary);
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .chat-message {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .chat-footer {
+            padding: 1rem;
+            border-top: 2px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent);
+        }
+
+        .chat-send {
+            padding: 0.75rem 1.25rem;
+            background: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .chat-send:hover {
+            background: #1e3a8a;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: calc(100vh - 60px);
+            display: flex;
+            align-items: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .hero-content {
+            width: 100%;
+            position: relative;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: calc(100vh - 60px);
+            border-radius: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            position: relative;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            z-index: 10;
+            text-align: left;
+            max-width: 660px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-text h1 {
+            color: #0a0a0a;
+            text-shadow: none;
+        }
+
+        .hero-text p {
+            color: #525252;
+            text-shadow: none;
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            animation: fadeInUp 1s ease 1s backwards;
+        }
+
+        .scroll-down-arrow {
+            width: 30px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 20px;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .scroll-down-arrow::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: black;
+            border-radius: 2px;
+            animation: scrollAnimation 2s infinite;
+        }
+
+        @keyframes scrollAnimation {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateX(-50%) translateY(12px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .scroll-down:hover .scroll-down-arrow {
+            opacity: 1;
+            border-color: var(--accent);
+        }
+
+        .scroll-down:hover .scroll-down-arrow::before {
+            background: var(--accent);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 2.5rem;
+            color: black;
+            max-width: 600px;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+            margin-bottom: 2.5rem;
+        }
+
+        /* CTA Button - Unified styling for all buttons */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: #1e40af;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+            animation: fadeInUp 0.8s ease 0.6s backwards;
+            width: 50%;
+            max-width: 450px;
+        }
+
+        .cta-button:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+        }
+
+        .service-card .cta-button {
+            animation: none;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            max-width: 700px;
+        }
+
+        .services-section-wrapper {
+            background: var(--bg-secondary);
+            border-radius: 30px;
+            padding: 4rem;
+            border: 2px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .section-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+
+        .section-subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.35rem;
+            color: var(--text-secondary);
+        }
+
+        /* Consulting Services */
+        .services-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            transition: all 0.3s ease;
+            position: sticky;
+            top: 100px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 500px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card:nth-child(1) {
+            top: 100px;
+        }
+
+        .service-card:nth-child(2) {
+            top: 120px;
+        }
+
+        .service-card:nth-child(3) {
+            top: 140px;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+            z-index: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(0, 0, 0, 0.3) 0%, 
+                rgba(0, 0, 0, 0.5) 100%);
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            border-width: 3px;
+        }
+
+        .service-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem;
+            z-index: 1;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-image {
+            opacity: 0.4;
+            font-size: 11rem;
+        }
+
+        .service-content {
+            flex: 1;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .service-card p {
+            font-family: 'Open Sans', sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 2rem;
+        }
+
+        .service-card ul {
+            font-family: 'Open Sans', sans-serif;
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-card li {
+            font-family: 'Open Sans', sans-serif;
+            padding: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card li::before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--bg-secondary);
+            align-items: center;
+            border-radius: 30px;
+            padding: 4rem;
+            border: 2px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-info {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-primary);
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent);
+            transform: translateX(8px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border-radius: 12px;
+            color: var(--text-primary);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details a {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .navbar {
+                padding: 1rem 0;
+            }
+
+            .navbar-container {
+                padding: 0 1.5rem;
+            }
+
+            .navbar-logo {
+                font-size: 1.5rem;
+            }
+
+            .navbar-menu {
+                gap: 1.5rem;
+            }
+
+            .navbar-menu a {
+                font-size: 1rem;
+            }
+
+            .hero {
+                min-height: calc(100vh - 70px);
+            }
+
+            .hero-image {
+                height: calc(100vh - 70px);
+                font-size: 5rem;
+            }
+
+            .hero-text {
+                left: 5%;
+                right: 5%;
+                max-width: 90%;
+                padding: 2rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 0.875rem 1.75rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 6vw, 3rem);
+                white-space: normal;
+            }
+
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .services-section-wrapper,
+            .contact-section {
+                padding: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+                min-height: 450px;
+                position: relative;
+                top: auto;
+            }
+
+            .service-card:nth-child(1),
+            .service-card:nth-child(2),
+            .service-card:nth-child(3) {
+                top: auto;
+            }
+
+            .services-grid {
+                gap: 2rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .service-card p,
+            .service-card li {
+                font-size: 1rem;
+            }
+
+            .service-image {
+                font-size: 6rem;
+            }
+
+            .service-card:hover .service-image {
+                font-size: 7rem;
+            }
+
+            .contact-details h3 {
+                font-size: 1.2rem;
+            }
+
+            .contact-details a {
+                font-size: 1rem;
+            }
+
+            .scroll-indicator {
+                width: 50px;
+                height: 50px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .scroll-down-arrow {
+                width: 25px;
+                height: 40px;
+            }
+
+            .chat-button {
+                width: 50px;
+                height: 50px;
+                bottom: 5rem;
+                right: 1.5rem;
+            }
+
+            .chat-icon {
+                font-size: 2rem;
+            }
+
+            .chat-window {
+                width: calc(100% - 2rem);
+                height: calc(100vh - 4rem);
+                bottom: 1rem;
+                right: 1rem;
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#hero" class="navbar-logo">ZNTHEON.COM</a>
+            <ul class="navbar-menu">
+                <li><a href="#services">Consulting</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <!--
+                    <div class="navbar-theme-toggle" id="themeToggle">
+                        <div class="toggle-circle">
+                            <span class="toggle-icon" id="sunIcon">🌙</span>
+                            <span class="toggle-icon hidden" id="moonIcon">☀️</span>
+                        </div>
+                    </div> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chat Button 
+    <div class="chat-button" id="chatButton">
+        <svg class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+            <ellipse cx="12" cy="10" rx="10" ry="7" />
+            <path d="M8 16 L7 20 L11 17" />
+        </svg>
+    </div>
+
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span>Chat with us</span>
+            <button class="chat-close" id="chatClose">×</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message">
+                <strong>AVA:</strong> Hello! How can we help you today?
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+            <button class="chat-send" id="chatSend">Send</button>
+        </div>
+    </div>
+    Chat Window -->
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <svg class="scroll-progress-fill" id="progressFill" viewBox="0 0 66 66">
+            <circle cx="33" cy="33" r="30" stroke-dasharray="188.5" stroke-dashoffset="188.5"></circle>
+        </svg>
+        <svg class="scroll-arrow" viewBox="0 0 24 24" width="20" height="20">
+            <path d="M6 15L12 9L18 15" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="./hero1.jpg" alt="Business Illustration">
+            </div>
+            <div class="hero-text">
+                <h1>YOUR GROWTH PARTNER.</h1>
+                <p>We increase revenue and reduce cost for your business.</p>
+                <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Contact Us
+                </button>
+            </div>
+            <div class="scroll-down" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                <div class="scroll-down-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting Services -->
+    <section id="services">
+        <div class="container">
+            <div class="services-section-wrapper">
+                <div class="section-header">
+                    <h2 class="section-title">OUR CONSULTING SERVICES</h2>
+                    <p class="section-subtitle"></p>
+                </div>
+
+                <div class="services-grid">
+                <!-- Workflow Automation -->
+                <div class="service-card">
+                    <span class="service-image"><img src="./hero2.jpg" alt="Business Illustration"></span>
+                    <div class="service-content">
+                        <div>
+                            <h3>Automation Solutions</h3>
+                            <p>Reduce cost and streamline operations with intelligent automation solutions that increase efficiency.</p>
+                            <ul>
+                                <li>Workflow Automation & Analytics</li>
+                                <li>Intelligent Document Processing</li>
+                                <li>Natural Language Processing</li>
+                                <li>Intelligent Computer Vision</li>
+                            </ul>
+                        </div>
+                        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Natural Language Processing -->
+                <div class="service-card">
+                    <span class="service-image"><img src="./hero3.jpg" alt="Business Illustration"></span>
+                    <div class="service-content">
+                        <div>
+                            <h3>Content Solutions</h3>
+                            <p>Build authority and increase revenue for your business with thought leadership content solutions.</p>
+                            <ul>
+                                <li>Sentiment Analysis & Insights</li>
+                                <li>Content Strategy & optimization</li>
+                                <li>Content Topic Research</li>
+                                <li>Topic Classification</li>
+                            </ul>
+                        </div>
+                        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                            Contact Us
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-section">
+                <div class="section-header">
+                    <h2 class="section-title">LET's TALK</h2>
+                    <p class="section-subtitle"></p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">@</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:contact@zntheon.com">hello@zntheon.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="text-center">&copy; <script>document.write(/\d{4}/.exec(Date())[0])</script>, ZNTHEON.COM | All rights reserved. </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        /*
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference
+        //const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', currentTheme);
+        
+        // Set initial icon (show what clicking will switch TO)
+        if (currentTheme === 'light') {
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        } else {
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            // Toggle icons to show next state
+            if (theme === 'light') {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+*/      
+        const html = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', currentTheme);
+        // Scroll Indicator
+        const scrollIndicator = document.getElementById('scrollIndicator');
+        const progressFill = document.getElementById('progressFill');
+
+        function updateScrollIndicator() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            // Update circular line progress (SVG stroke)
+            const circle = progressFill.querySelector('circle');
+            const circumference = 2 * Math.PI * 30; // radius = 30
+            const offset = circumference - (scrollPercent / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+
+            // Show/hide indicator
+            if (scrollTop > 300) {
+                scrollIndicator.classList.add('visible');
+            } else {
+                scrollIndicator.classList.remove('visible');
+            }
+        }
+
+        function getClipPathCoordinates(degrees) {
+            const radius = 50;
+            const x = 50 + radius * Math.sin(degrees * Math.PI / 180);
+            const y = 50 - radius * Math.cos(degrees * Math.PI / 180);
+            
+            if (degrees <= 90) return `${x}% ${y}%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 50% 0%`;
+            if (degrees <= 180) return `${x}% ${y}%, 100% 100%, 0% 100%, 0% 0%, 50% 0%`;
+            if (degrees <= 270) return `${x}% ${y}%, 0% 100%, 0% 0%, 50% 0%`;
+            return `${x}% ${y}%, 0% 0%, 50% 0%`;
+        }
+
+        window.addEventListener('scroll', updateScrollIndicator);
+
+        scrollIndicator.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Chat functionality
+        const chatButton = document.getElementById('chatButton');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatClose = document.getElementById('chatClose');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const chatBody = document.getElementById('chatBody');
+
+        chatButton.addEventListener('click', () => {
+            chatWindow.classList.add('active');
+            chatInput.focus();
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatWindow.classList.remove('active');
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'chat-message';
+                messageDiv.innerHTML = `<strong>You:</strong> ${message}`;
+                chatBody.appendChild(messageDiv);
+                chatInput.value = '';
+                
+                // Auto-scroll to bottom
+                chatBody.scrollTop = chatBody.scrollHeight;
+                
+                // Simulate response
+                setTimeout(() => {
+                    const responseDiv = document.createElement('div');
+                    responseDiv.className = 'chat-message';
+                    responseDiv.innerHTML = `<strong>ZNTHEON:</strong> Thank you for your message! We'll get back to you shortly.`;
+                    chatBody.appendChild(responseDiv);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        chatSend.addEventListener('click', sendMessage);
+        
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
